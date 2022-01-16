@@ -1,11 +1,21 @@
 package fundamentals
 
-class Car(val name: String, val year: Int) {
+class Car(var carName: String, val year: Int, val owner: Owner) {
+
+}
+
+data class Owner(var name: String, var age: Int) {
 
 }
 
 fun main() {
-    var car = Car("BMW", 2022)
+    var car = Car("BMW", 2022, Owner("dh", 26))
 
-    println(car.name)
+    println(car.carName)
+    car.carName = "KIA"
+    println(car.carName)
+
+    println(car.owner)
+    car.owner.name = "Daniel"
+    println(car.owner)
 }
